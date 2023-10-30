@@ -18,13 +18,16 @@ public class projectile : MonoBehaviour
         
         }*/
     }
-    // this will contain the collision code for enemies
-    public void bulletCollide()
+    // this will contain the collision code for enemies and the bullet
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-
-
+        Physics2D.IgnoreLayerCollision(6, 7);
+        Physics2D.IgnoreLayerCollision(7, 6);
+        //this is temp code for destroying enemies health will have to be implemented.
+        Destroy(gameObject);
 
     }
+
 
 
 }

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8249907386652887185}
   - component: {fileID: 288205541719993659}
   - component: {fileID: 6241723941076435224}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -136,3 +136,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e6707e164576f49a0a5e94ba4d4354, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  weapons: {fileID: 0}
