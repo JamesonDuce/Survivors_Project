@@ -22,7 +22,7 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         bulletdirection();
-        if (Input.GetKeyDown("space") && cooldowntime > attacktime)
+        if (Input.GetKeyDown("x") && cooldowntime > attacktime)
         {
             attacking();
         }
