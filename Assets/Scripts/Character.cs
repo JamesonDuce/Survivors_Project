@@ -14,7 +14,7 @@ public class Character : MonoBehaviour
 {
     private UserInterface UI;
     public int characterID = 0;
-    
+
     public float healthCap = 100; // Max amount the player can have
     private float health; // Current amount the player has
 
@@ -87,7 +87,6 @@ public class Character : MonoBehaviour
     {
         CharacterInput();
 
-        
         if (isDashing)
         {
             if (dashTimer > 0)
@@ -129,13 +128,13 @@ public class Character : MonoBehaviour
 
     void CharacterInput() // Gets the input of the user
     {
-        if(!isDashing && !gameOver && !isPaused)
+        if (!isDashing && !gameOver && !isPaused)
         {
             horzInput = Input.GetAxisRaw("Horizontal");
             vertInput = Input.GetAxisRaw("Vertical");
             moveVector = new Vector2(horzInput, vertInput).normalized; // Normalizes the vector in order to prevent user from gaining speed when using both inputs
 
-            if(Input.GetKeyDown(KeyCode.Space) && (stamina > dashStamCost) && !(horzInput == 0 && vertInput == 0)) // Dash if they have enough stamina
+            if (Input.GetKeyDown(KeyCode.Space) && (stamina > dashStamCost) && !(horzInput == 0 && vertInput == 0)) // Dash if they have enough stamina
             {
                 isDashing = true;
                 stamina -= dashStamCost;
@@ -147,7 +146,7 @@ public class Character : MonoBehaviour
             }
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape) && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver)
         {
             if (isPaused == false)
             {
@@ -172,13 +171,13 @@ public class Character : MonoBehaviour
 
     void CharacterAnimation() // Controls animation variables to determine the proper animation to play
     {
-        if(isPaused || gameOver)
+        if (isPaused || gameOver)
             return;
 
         playerAnimator.SetFloat("horz", horzInput);
         playerAnimator.SetFloat("vert", vertInput);
 
-        if(horzInput == 0 && vertInput == 0) // If there is no player input
+        if (horzInput == 0 && vertInput == 0) // If there is no player input
         {
             playerAnimator.SetFloat("horz", tempVector.x); // Set the animation to what direction they faced previously
             playerAnimator.SetFloat("vert", tempVector.y);
@@ -197,7 +196,7 @@ public class Character : MonoBehaviour
             return;
         health -= damageAmount;
         UI.UpdateHealthSlider();
-        if(health <= 0)
+        if (health <= 0)
         {
             OnGameOver(); // If the player reaches 0 health, end the game;
         }
@@ -206,36 +205,44 @@ public class Character : MonoBehaviour
     public void AddExp(int gainAmount)
     {
         exp += gainAmount;
-        if(exp >= lvlUpAmountRequired[level]) // If player has enough exp to go to next level
+        if (exp >= lvlUpAmountRequired[level]) // If player has enough exp to go to next level
         {
             exp -= lvlUpAmountRequired[level]; // Take the exp cost away
-            level++; // Level them up
-
+            level++;
+            UI.UpdateLevelText(level);
             // Play some animation
             // Pause the gameplay
             // Give player a choice of upgrade
         }
+        UI.UpdateExpSlider();
     }
     public void AddGold(int goldGain)
     {
         gold += goldGain;
+        UI.UpdateGoldText(gold);
     }
 
     public int GetAmountToLvlUp()
     {
         return lvlUpAmountRequired[level];
     }
+
+    public int Getlevel()
+    {
+        return level;
+    }
+
     public void OnGameOver()
     {
         // Play death animation
 
         Debug.Log("Game Over!");
         gameOver = true;
-
+        playerAnimator.SetBool("gameOver", true);
         Time.timeScale = 1;
 
         playerRb.velocity = Vector2.zero;
-        playerAnimator.speed = 0;
+        playerAnimator.speed = 1;
         // Save the player's stats
     }
 }
