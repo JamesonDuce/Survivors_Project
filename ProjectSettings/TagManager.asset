@@ -7,6 +7,7 @@ TagManager:
   - Pickup
   - Exp
   - DestroyPickup
+  - Enemy
   layers:
   - Default
   - TransparentFX

@@ -5,6 +5,8 @@ using UnityEngine;
 public class projectile : MonoBehaviour
 {
     public Weapons weapons;
+    public int projectileDamage;
+
    //this determines how far the projectile goes before going off the screen
     public void Awake()
     {
@@ -24,6 +26,14 @@ public class projectile : MonoBehaviour
         Physics2D.IgnoreLayerCollision(6, 7);
         Physics2D.IgnoreLayerCollision(7, 6);
         //this is temp code for destroying enemies health will have to be implemented.
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Debug.Log("Enemy Hit! " + projectileDamage);
+            Enemy e = collision.gameObject.GetComponent<Enemy>();
+            e.TakeDamage(projectileDamage);
+        }
+
         Destroy(gameObject);
 
     }

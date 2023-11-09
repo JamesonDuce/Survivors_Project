@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 173514471666847780}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -165,8 +165,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkSpeed: 300
-  health: 0
-  attack: 0
+  health: 100
+  attack: 50
+  dropItems:
+  - {fileID: 2714227368731529774, guid: 92ecd78e2f212334397e6862b8f4ab3e, type: 3}
+  - {fileID: 6759159781153281905, guid: 9060ca5671ddda34dbf41c4be708f79e, type: 3}
+  dropRate:
+  - 0.9
+  - 0.1
+  delayAttack: 2
 --- !u!50 &173514471666847780
 Rigidbody2D:
   serializedVersion: 4
@@ -187,4 +194,4 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
-  m_Constraints: 0
+  m_Constraints: 4

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1789181999
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1789182000}
+  m_Layer: 6
+  m_Name: Projectile
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1789182000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789181999}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 187972196355438297}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &187972194819088589
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,8 +130,8 @@ GameObject:
   - component: {fileID: 187972196355438298}
   - component: {fileID: 187972196355438301}
   - component: {fileID: 3031852733600300208}
-  m_Layer: 0
-  m_Name: Character0 1
+  m_Layer: 6
+  m_Name: Character0
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,6 +152,7 @@ Transform:
   - {fileID: 187972194819088433}
   - {fileID: 3031852732389007700}
   - {fileID: 3031852733053810406}
+  - {fileID: 1789182000}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -248,7 +280,7 @@ Animator:
   m_GameObject: {fileID: 187972196355438295}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 9e3cdcbaf245a0448803263204411e45, type: 2}
+  m_Controller: {fileID: 9100000, guid: 64b5e57bb00d5e64fb9b8e1205824247, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -273,7 +305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attacktime: 0
   cooldowntime: 100
-  spawn: {fileID: 0}
+  spawn: {fileID: 1789182000}
   bulletImage: {fileID: 4091694675000158259, guid: 5e8ee93d457fe9f43aadb0ba1c9d88f2, type: 3}
   attackspeed: 50
   direction: 3
