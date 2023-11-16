@@ -10,6 +10,8 @@ public class UserInterface : MonoBehaviour
     public Slider staminaSlider;
     public Slider healthSlider;
     public Slider expSlider;
+    public GameObject pauseUI;
+    public GameObject gameUI;
 
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI levelText;
@@ -50,5 +52,25 @@ public class UserInterface : MonoBehaviour
     public void UpdateHealthSlider()
     {
         healthSlider.value = player.GetHealth();
+    }
+
+    public void TogglePauseScreen()
+    {
+        bool isPaused = player.IsPaused();
+
+        if (isPaused == false)
+        {
+            player.SetPaused(true);
+            Time.timeScale = 0;
+            pauseUI.SetActive(true);
+            gameUI.SetActive(false);
+        }
+        else
+        {
+            player.SetPaused(false);
+            Time.timeScale = 1;
+            pauseUI.SetActive(false);
+            gameUI.SetActive(true);
+        }
     }
 }

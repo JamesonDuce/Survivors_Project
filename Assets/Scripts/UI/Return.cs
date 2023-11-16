@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleScreen : MonoBehaviour
+public class Return : MonoBehaviour
 {
-    public void LoadLevel()
+    public void ReturnTitle()
     {
-        SceneManager.LoadScene("First Stage");
+        SceneManager.LoadScene("Title Screen");
     }
 }

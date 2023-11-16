@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 /* TODO:
@@ -58,13 +59,13 @@ public class Character : MonoBehaviour
     private Animator playerAnimator;
     private Vector2 tempVector;
 
-    bool isDashing = false;
+    private bool isDashing = false;
     public float dashTimer = .2f;
     public float dashSpeed;
     private float resetTime;
 
-    bool isPaused = false;
-    bool gameOver = false;
+    private bool isPaused { get; set; } = false;
+    private bool gameOver = false;
 
     void Awake()
     {
@@ -146,18 +147,9 @@ public class Character : MonoBehaviour
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver)
+        if (Input.GetKeyDown(KeyCode.Escape) && !gameOver) // Pause game is game is not over
         {
-            if (isPaused == false)
-            {
-                isPaused = true;
-                Time.timeScale = 0;
-            }
-            else
-            {
-                isPaused = false;
-                Time.timeScale = 1;
-            }
+            UI.TogglePauseScreen();
         }
     }
 
@@ -235,14 +227,23 @@ public class Character : MonoBehaviour
     public void OnGameOver()
     {
         // Play death animation
-
-        Debug.Log("Game Over!");
         gameOver = true;
         playerAnimator.SetBool("gameOver", true);
         Time.timeScale = 1;
+        playerRb.simulated = false;
 
         playerRb.velocity = Vector2.zero;
         playerAnimator.speed = 1;
         // Save the player's stats
+    }
+
+    public bool IsPaused()
+    {
+        return isPaused;
+    }
+
+    public void SetPaused(bool pause)
+    {
+        isPaused = pause;
     }
 }
