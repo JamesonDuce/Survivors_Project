@@ -15,6 +15,8 @@ public class UserInterface : MonoBehaviour
 
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI levelText;
+    public TextMeshProUGUI WaveText;
+    TestSpawner wavecount = new TestSpawner();
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class UserInterface : MonoBehaviour
         UpdateStaminaSlider();
         UpdateExpSlider();
         UpdateHealthSlider();
+        updateWaveText();
     }
 
     public void UpdateStaminaSlider()
@@ -49,6 +52,10 @@ public class UserInterface : MonoBehaviour
         goldText.text = "Gold: " + gold.ToString();
     }
 
+public void updateWaveText() {
+     WaveText.text ="Wave: "  + wavecount.wavecount.ToString();
+    
+    }
     public void UpdateHealthSlider()
     {
         healthSlider.value = player.GetHealth();
