@@ -9,6 +9,12 @@ public class BattleSelector : MonoBehaviour
     private int lvlId = 0;
     public TMP_Dropdown charDrop;
     public TMP_Dropdown lvlDrop;
+    public MainManager mainManager;
+
+    public void Start()
+    {
+        mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
+    }
     public void ReturnToTitle()
     {
         SceneManager.LoadScene("Title Screen");
@@ -16,9 +22,11 @@ public class BattleSelector : MonoBehaviour
 
     public void StartGame()
     {
-        charId = charDrop.value;
+        charId = charDrop.value - 1;
         lvlId = lvlDrop.value;
 
+        mainManager.characterID = charId;
+        Time.timeScale = 1; // Makes sure the game is not in a paused state if the player has transitioned from a level to the select screen.
         switch (lvlId)
         {
             case 0: // None

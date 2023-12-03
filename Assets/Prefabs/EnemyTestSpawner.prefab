@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6310958025100742059}
   m_Layer: 0
   m_Name: EnemyTestSpawner
-  m_TagString: Untagged
+  m_TagString: EnemySpawner
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,3 +99,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnItem: {fileID: 173514471666847787, guid: b8bd502ab38d7e749aed7ccf991cf064, type: 3}
   delay: 4.5
+  wavecount: 1

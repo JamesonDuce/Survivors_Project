@@ -4,6 +4,7 @@ using UnityEngine;
 public class TestSpawner : MonoBehaviour
 {
     public GameObject spawnItem;
+    public UserInterface UI;
 
     public float delay = 7.5f;
     private float delayReset;
@@ -14,6 +15,7 @@ public class TestSpawner : MonoBehaviour
     void Start()
     {
         delayReset = delay;
+        UI = GameObject.Find("Canvas").GetComponent<UserInterface>();
     }
 
     // Update is called once per frame
@@ -45,7 +47,7 @@ public class TestSpawner : MonoBehaviour
             wavecount = 2;
             wave = 2;
             delay = 30f;
-        
+            UI.updateWaveText();
         
         }
 
@@ -54,14 +56,14 @@ public class TestSpawner : MonoBehaviour
             wavecount = 3;
             wave = 3;
             delay = 30f;
-
+            UI.updateWaveText();
 
         }
 
         else if (spawnlimit >= 25 && wave == 3)
         {
             wave = 4;
-          
+            UI.updateWaveText();
 
 
 

@@ -16,11 +16,12 @@ public class UserInterface : MonoBehaviour
     public TextMeshProUGUI goldText;
     public TextMeshProUGUI levelText;
     public TextMeshProUGUI WaveText;
-    TestSpawner wavecount = new TestSpawner();
+    public TestSpawner wavecount;
 
     void Start()
     {
         player = GameObject.FindWithTag("Player").GetComponent<Character>();
+        wavecount = GameObject.FindWithTag("EnemySpawner").GetComponent<TestSpawner>();
         staminaSlider.maxValue = player.GetStamina();
         healthSlider.maxValue = player.GetHealth();
         expSlider.maxValue = player.GetAmountToLvlUp();
@@ -52,9 +53,9 @@ public class UserInterface : MonoBehaviour
         goldText.text = "Gold: " + gold.ToString();
     }
 
-public void updateWaveText() {
-     WaveText.text ="Wave: "  + wavecount.wavecount.ToString();
-    
+    public void updateWaveText() 
+    {
+        WaveText.text = "Wave: " + wavecount.wavecount;
     }
     public void UpdateHealthSlider()
     {

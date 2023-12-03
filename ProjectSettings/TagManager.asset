@@ -8,6 +8,7 @@ TagManager:
   - Exp
   - DestroyPickup
   - Enemy
+  - EnemySpawner
   layers:
   - Default
   - TransparentFX
