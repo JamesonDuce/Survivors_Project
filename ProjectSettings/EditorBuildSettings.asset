@@ -5,10 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scripts/Scenes/Menus/Title Screen.unity
     guid: 31459cea6aa37af49b39b6dd5360bed2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scripts/Scenes/Menus/Character Select.unity
     guid: a7c27cc8d709fd74595b4859733d5951
   - enabled: 1
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scripts/Scenes/Levels/Second Stage.unity
     guid: 1c8295d11c042f54eba349cb41da7382
+  - enabled: 1
+    path: Assets/Scripts/Scenes/Levels/Third Stage.unity
+    guid: 76c6501d15031f6499742f546cb45349
   m_configObjects: {}

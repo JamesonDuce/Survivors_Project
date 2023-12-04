@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class TestSpawner : MonoBehaviour
+public class Spawner_level_2_End : MonoBehaviour
 {
     public GameObject spawnItem;
     public UserInterface UI;
 
-    public float delay = 10000f;
-    private float delayReset;
+    public float delay = 3.5f;
+    private float delayReset = 3.5f;
     private int spawnlimit = 0;
     private int wave = 1;
     public int wavecount = 1;
@@ -24,7 +24,7 @@ public class TestSpawner : MonoBehaviour
     {
         delay -= Time.deltaTime; // Update the time that has passed
 
-        if(delay <= 0) // If it is time to spawn the object
+        if (delay <= 0) // If it is time to spawn the object
         {
             delay = delayReset; // Reset the delay time
 
@@ -36,24 +36,24 @@ public class TestSpawner : MonoBehaviour
             wavecheck();
         }
 
-       
+
 
 
     }
-    public void wavecheck() 
-    
+    public void wavecheck()
+
     {
-        if (spawnlimit >= 10 && wave == 1) 
-        { 
+        if (spawnlimit >= 15 && wave == 1)
+        {
             wavecount = 2;
             wave = 2;
             delay = 15f;
             UI.updateWaveText();
-          
-        
+
+
         }
 
-       else if (spawnlimit >= 20 && wave == 2)
+        else if (spawnlimit >= 30 && wave == 2)
         {
             wavecount = 3;
             wave = 3;
@@ -62,28 +62,27 @@ public class TestSpawner : MonoBehaviour
 
         }
 
-        else if (spawnlimit >= 25 && wave == 3)
+        else if (spawnlimit >= 45 && wave == 3)
         {
             wave = 4;
-            
 
 
 
         }
-       else  if (wave == 4)
+        else if (wave == 4)
         {
             loading();
         }
 
         if (spawnlimit == 2 && wave == 2)
         {
-            delay = 7.5f;
+            delay = 3.5f;
 
         }
-        else if(spawnlimit ==2 && wave ==3)
+        else if (spawnlimit == 2 && wave == 3)
         {
 
-            delay = 7.5f;
+            delay = 3.5f;
 
         }
 

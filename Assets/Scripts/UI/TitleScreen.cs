@@ -7,6 +7,16 @@ public class TitleScreen : MonoBehaviour
 {
     public void LoadLevel()
     {
-        SceneManager.LoadScene("Character Select");
+        SceneManager.LoadScene("First Stage");
     }
+
+    public void LoadLevel_2()
+    {
+        SceneManager.LoadScene("Second Stage");
+    }
+    public void LoadLevel_3()
+    {
+        SceneManager.LoadScene("Third Stage");
+    }
+
 }
