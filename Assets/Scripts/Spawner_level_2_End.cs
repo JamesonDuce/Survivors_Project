@@ -8,7 +8,7 @@ public class Spawner_level_2_End : MonoBehaviour
     public UserInterface UI;
 
     public float delay = 3.5f;
-    private float delayReset = 3.5f;
+    private float delayReset = 1.5f;
     private int spawnlimit = 0;
     private int wave = 1;
     public int wavecount = 1;
@@ -43,26 +43,26 @@ public class Spawner_level_2_End : MonoBehaviour
     public void wavecheck()
 
     {
-        if (spawnlimit >= 15 && wave == 1)
+        if (spawnlimit >= 10 && wave == 1)
         {
             wavecount = 2;
             wave = 2;
-            delay = 15f;
+            delay = 10f;
             UI.updateWaveText();
 
-
+           
         }
 
-        else if (spawnlimit >= 30 && wave == 2)
+        else if (spawnlimit >= 20 && wave == 2)
         {
             wavecount = 3;
             wave = 3;
-            delay = 15f;
+            delay = 10f;
             UI.updateWaveText();
 
         }
 
-        else if (spawnlimit >= 45 && wave == 3)
+        else if (spawnlimit >= 30 && wave == 3)
         {
             wave = 4;
 
@@ -71,7 +71,7 @@ public class Spawner_level_2_End : MonoBehaviour
         }
         else if (wave == 4)
         {
-            loading();
+           
         }
 
         if (spawnlimit == 2 && wave == 2)

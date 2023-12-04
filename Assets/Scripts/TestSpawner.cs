@@ -49,7 +49,6 @@ public class TestSpawner : MonoBehaviour
             wave = 2;
             delay = 15f;
             UI.updateWaveText();
-          
         
         }
 

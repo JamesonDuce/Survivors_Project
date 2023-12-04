@@ -32,8 +32,11 @@ public class Enemy : MonoBehaviour
     }
 
     private void OnCollisionStay2D(Collision2D collision)
+        
     {
-        if(collision.gameObject.CompareTag("Player"))
+        Physics2D.IgnoreLayerCollision(8, 9);
+        Physics2D.IgnoreLayerCollision(9, 8);
+        if (collision.gameObject.CompareTag("Player"))
         {
             if(Time.realtimeSinceStartup >= lastAttack + delayAttack) // If it is time to attack
             {

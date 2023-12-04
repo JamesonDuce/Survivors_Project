@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /* TODO:
  * 1. Integrate Weapons to the character object. 
@@ -23,7 +24,8 @@ public class Character : MonoBehaviour
     {
         return health;
     }
-
+    public float delayreset = 3.5f;
+    public float delay = 1000000;
     public float staminaCap = 100;
     public float staminaRegenRate = 0.5f;
     private float stamina;

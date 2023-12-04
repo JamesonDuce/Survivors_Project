@@ -16,7 +16,7 @@ public class Spawner_Level_2 : MonoBehaviour
     void Start()
     {
         delayReset = delay;
-        UI = GameObject.Find("Canvas").GetComponent<UserInterface>();
+        
     }
 
     // Update is called once per frame
@@ -48,7 +48,7 @@ public class Spawner_Level_2 : MonoBehaviour
             wavecount = 2;
             wave = 2;
             delay = 15f;
-            UI.updateWaveText();
+            
 
 
         }
@@ -58,7 +58,7 @@ public class Spawner_Level_2 : MonoBehaviour
             wavecount = 3;
             wave = 3;
             delay = 15f;
-            UI.updateWaveText();
+           
 
         }
 
