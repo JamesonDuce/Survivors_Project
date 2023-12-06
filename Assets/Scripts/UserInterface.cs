@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class UserInterface : MonoBehaviour
 {
-    private Character player;
+    public Character player;
 
     public Slider staminaSlider;
     public Slider healthSlider;

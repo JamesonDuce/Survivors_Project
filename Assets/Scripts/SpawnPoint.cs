@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnPoint : MonoBehaviour
 {
     public GameObject[] characters;
-    void Start()
+    void Awake()
     {
         Instantiate(characters[GameObject.Find("MainManager").GetComponent<MainManager>().characterID]);
     }
